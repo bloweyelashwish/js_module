@@ -1,0 +1,178 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+.scheduler {
+    display: flex;
+    padding: 3rem;
+}
+
+.scheduler .scheduler__stamp {
+    font-size: 1rem;
+}
+
+.scheduler .scheduler__stamp--half {
+    font-size: 0.75rem;
+}
+
+.scheduler .scheduler__time-table {
+    position: relative;
+    width: 100%;
+}
+
+.scheduler .scheduler__time-block {
+    position: relative;
+    height: 120px;
+}
+
+.scheduler .scheduler__time-block::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: gray;
+    content: '';
+}
+
+.scheduler .scheduler__events {
+    position: relative;
+}
+
+.scheduler .scheduler__event {
+    position: absolute;
+    background-color: #E2ECF5;
+    border-left: 1px solid #6E9ECF;
+    padding-right: 20px;
+    /*padding: 5px;*/
+}
+
+.scheduler .scheduler__event-content {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.scheduler .scheduler__event-title {
+    padding-inline: 5px;
+    width: 15ch;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.scheduler .scheduler__event .scheduler__event-button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.scheduler .scheduler__event .scheduler__event-button::after {
+    font-size: 10px;
+    content: '\274c';
+}
+
+.scheduler .scheduler__action-wrapper {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.scheduler .scheduler__action {
+    position: relative;
+}
+
+.scheduler .scheduler__action button {
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #6E9ECF;
+    text-transform: uppercase;
+    color: #E2ECF5;
+    border: none;
+    cursor: pointer;
+    transition: background-color 100ms ease-in;
+}
+
+.scheduler .scheduler__action button:hover {
+    background-color: #447cb6;
+}
+
+.scheduler .scheduler__form {
+    top: 115%;
+    right: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 150ms ease-in;
+    border: 1px solid #E2ECF5;
+    padding: 1rem;
+    width: 15rem;
+}
+
+.scheduler .scheduler__field {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.scheduler .scheduler__form button {
+    padding: 5px;
+}
+
+.scheduler .scheduler__action.is-active .scheduler__form {
+    visibility: visible;
+    opacity: 1;
+}
+

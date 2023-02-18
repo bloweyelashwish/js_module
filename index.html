@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scheduler</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="scheduler">
+        <div class="scheduler__time-table"></div>
+<!--        <div class="scheduler__events"></div>-->
+        <div class="scheduler__action-wrapper">
+            <div class="scheduler__action">
+                <button type="button" class="js-scheduler-form-toggle">Add event</button>
+                <form class="scheduler__form">
+                    <div class="scheduler__field">
+                        <label for="name">Event name</label>
+                        <input type="text" id="name" name="title">
+                    </div>
+                    <div class="scheduler__field">
+                        <label for="time">Select starting time</label>
+                        <input type="time" min="8:00" max="17:00" id="time" name="start">
+                    </div>
+                    <div class="scheduler__field">
+                        <label for="end">Select ending time</label>
+                        <input type="time" min="8:00" max="17:00" id="end" name="end">
+                    </div>
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
