@@ -99,6 +99,7 @@ class Scheduler {
     this.container = container;
     this.timeTableContainer = this.container.querySelector('.scheduler__time-table');
     this.timeRangeArray = this.generateTimeRange(timeRange);
+    this.eventsContainer = this.container.querySelector('.scheduler__events');
 
     this.events = this.mapEventsList(eventList);
   }
@@ -221,7 +222,7 @@ class Scheduler {
 
   populateEvents() {
     const eventsHtmlElements = this.events.map((event) => event.setHtml(this));
-    this.timeTableContainer.append(...eventsHtmlElements);
+    this.eventsContainer.append(...eventsHtmlElements);
   }
 
   repopulateEvents() {
