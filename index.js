@@ -54,7 +54,7 @@ class Event {
     this.start = start;
     this.end = this.start + this.duration;
     this.height = this.duration;
-    this.width = undefined;
+    this.width = 200;
     this.intToPx = intToPx;
     this.offsetX = 65;
   }
@@ -181,14 +181,9 @@ class Scheduler {
       });
 
       if (clashingEvents.length) {
-        const calculatedEventWidth = Math.floor((Scheduler._defaultEventWidth / clashingEvents.length));
-
         clashingEvents.forEach((clashingEvent) => {
-          clashingEvent.width = calculatedEventWidth;
-          event.width = calculatedEventWidth;
-
           if (event.offsetX === clashingEvent.offsetX) {
-            clashingEvent.offsetX += (calculatedEventWidth + Scheduler._defaultEventsGap);
+            clashingEvent.offsetX += (clashingEvent.width + Scheduler._defaultEventsGap);
           }
         });
       } else {
