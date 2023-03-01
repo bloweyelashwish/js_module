@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 *,
 *::before,
 *::after {
@@ -30,6 +32,8 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
 }
 
 input,
@@ -46,6 +50,7 @@ select {
 
 .scheduler .scheduler__stamp {
     font-size: 1rem;
+    font-weight: 400;
 }
 
 .scheduler .scheduler__stamp--half {
